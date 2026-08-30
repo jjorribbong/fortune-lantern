@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fortunelantern.com/sitemap.xml
