@@ -1902,15 +1902,15 @@
       </div>
 
       <div class="offering-tiers">
-        <a class="tier" data-offering-amount="3" href="https://www.paypal.me/heejin9862/3USD" target="_blank" rel="noopener">
+        <a class="tier" data-offering-amount="3" href="https://www.buymeacoffee.com/fortunelantern" target="_blank" rel="noopener">
           <span class="amount">☕ $3 — a small tea</span>
           <span class="label">A quiet thank-you</span>
         </a>
-        <a class="tier recommended" data-offering-amount="7" href="https://www.paypal.me/heejin9862/7USD" target="_blank" rel="noopener">
+        <a class="tier recommended" data-offering-amount="7" href="https://www.buymeacoffee.com/fortunelantern" target="_blank" rel="noopener">
           <span class="amount">🍵 $7 — a generous bowl</span>
           <span class="label">Suggested amount</span>
         </a>
-        <a class="tier" data-offering-amount="15" href="https://www.paypal.me/heejin9862/15USD" target="_blank" rel="noopener">
+        <a class="tier" data-offering-amount="15" href="https://www.buymeacoffee.com/fortunelantern" target="_blank" rel="noopener">
           <span class="amount">🏮 $15 — a blessed offering</span>
           <span class="label">For the especially moved</span>
         </a>
@@ -1923,12 +1923,12 @@
             <span class="currency" aria-hidden="true">$</span>
             <input type="number" id="customAmount" min="1" step="0.01" inputmode="decimal" placeholder="Any amount, USD">
           </span>
-          <button type="button" class="btn btn-gold" id="customOfferingBtn">Send via PayPal</button>
+          <button type="button" class="btn btn-gold" id="customOfferingBtn">Send via Buy Me a Coffee</button>
         </div>
         <p class="custom-offering-hint" id="customOfferingHint" role="status" aria-live="polite"></p>
       </div>
 
-      <p class="offering-note">Offerings go directly via PayPal — opens in a new tab, no account or sign-up needed on your end.</p>
+      <p class="offering-note">Offerings go directly via Buy Me a Coffee — opens in a new tab, no account or sign-up needed on your end.</p>
     </div>
   </section>
   </div>
@@ -3728,15 +3728,15 @@
   });
 
   /* ---------------- Custom offering amount ---------------- */
-  var PAYPAL_USERNAME = 'heejin9862';
+  var BMC_URL = 'https://www.buymeacoffee.com/fortunelantern';
   var customAmount = document.getElementById('customAmount');
   var customOfferingBtn = document.getElementById('customOfferingBtn');
   var customOfferingHint = document.getElementById('customOfferingHint');
 
-  // Every click through to PayPal is invisible to GA4 by default -- it's an
-  // outbound link, the browser just navigates. Firing this first is the
-  // only way to know whether the offering tab converts to a click at all,
-  // as opposed to whether PayPal itself completes the payment afterward.
+  // Every click through to Buy Me a Coffee is invisible to GA4 by default --
+  // it's an outbound link, the browser just navigates. Firing this first is
+  // the only way to know whether the offering tab converts to a click at
+  // all, as opposed to whether the payment itself completes afterward.
   function trackOffering(amount) {
     if (typeof gtag === 'function') {
       gtag('event', 'select_offering_amount', { amount: amount, currency: 'USD' });
@@ -3759,8 +3759,7 @@
     customOfferingHint.textContent = '';
     var amountStr = Math.round(val * 100) / 100;
     trackOffering(amountStr);
-    var url = 'https://www.paypal.me/' + PAYPAL_USERNAME + '/' + amountStr + 'USD';
-    window.open(url, '_blank', 'noopener');
+    window.open(BMC_URL, '_blank', 'noopener');
   }
 
   customOfferingBtn.addEventListener('click', sendCustomOffering);
