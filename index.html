@@ -1340,102 +1340,7 @@
   .offering-copy { display: flex; flex-direction: column; gap: 1.1rem; max-width: 56ch; margin-bottom: 2.5rem; color: var(--paper-300); }
   .offering-copy strong { color: var(--paper-100); font-weight: 600; }
 
-  .offering-tiers {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  @media (max-width: 700px) {
-    .offering-tiers { grid-template-columns: 1fr; }
-  }
-
-  .tier {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    text-align: left;
-    background: var(--ink-850);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 1.5rem;
-    text-decoration: none;
-    transition: border-color 0.2s ease, transform 0.2s ease;
-  }
-
-  .tier:hover { border-color: var(--gold-500); transform: translateY(-2px); }
-
-  .tier .amount { font-family: var(--font-display); font-size: 1.4rem; color: var(--gold-300); }
-  .tier .label { font-size: 0.8rem; color: var(--paper-300); }
-
-  .tier.recommended { border-color: var(--gold-500); box-shadow: 0 0 0 1px var(--gold-500); }
-
-  .custom-offering {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    background: var(--ink-850);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 1.5rem;
-    margin-top: 1rem;
-  }
-
-  .custom-offering label {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--paper-300);
-    letter-spacing: 0.02em;
-  }
-
-  .custom-offering-row {
-    display: flex;
-    gap: 0.75rem;
-    align-items: stretch;
-    flex-wrap: wrap;
-  }
-
-  .custom-amount-field {
-    display: flex;
-    align-items: center;
-    background: var(--ink-900);
-    border: 1px solid var(--ink-650);
-    border-radius: 10px;
-    padding: 0 0.85rem;
-    flex: 1 1 10rem;
-  }
-
-  .custom-amount-field .currency {
-    font-family: var(--font-display);
-    color: var(--gold-300);
-    margin-right: 0.35rem;
-  }
-
-  .custom-amount-field input {
-    border: none;
-    background: transparent;
-    padding: 0.7rem 0;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    color: var(--paper-100);
-    width: 100%;
-    -moz-appearance: textfield;
-  }
-
-  .custom-amount-field input::-webkit-outer-spin-button,
-  .custom-amount-field input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  .custom-amount-field input:focus { outline: none; }
-  .custom-amount-field:focus-within { border-color: var(--gold-500); }
-
-  .custom-offering-hint {
-    min-height: 1.1rem;
-    font-size: 0.8125rem;
-    color: var(--lacquer-500);
-  }
+  .offering-bmc-cta { margin: 0.5rem 0 1.5rem; }
 
   .offering-note {
     margin-top: 1.5rem;
@@ -1901,34 +1806,11 @@
         <p>Your reading and your lantern are free either way. If either one gave you something worth keeping, you're welcome to leave what feels right.</p>
       </div>
 
-      <div class="offering-tiers">
-        <a class="tier" data-offering-amount="3" href="https://www.buymeacoffee.com/fortunelantern" target="_blank" rel="noopener">
-          <span class="amount">☕ $3 — a small tea</span>
-          <span class="label">A quiet thank-you</span>
-        </a>
-        <a class="tier recommended" data-offering-amount="7" href="https://www.buymeacoffee.com/fortunelantern" target="_blank" rel="noopener">
-          <span class="amount">🍵 $7 — a generous bowl</span>
-          <span class="label">Suggested amount</span>
-        </a>
-        <a class="tier" data-offering-amount="15" href="https://www.buymeacoffee.com/fortunelantern" target="_blank" rel="noopener">
-          <span class="amount">🏮 $15 — a blessed offering</span>
-          <span class="label">For the especially moved</span>
-        </a>
+      <div class="offering-bmc-cta" id="offeringBmcCta">
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="fortunelantern" data-color="#FFDD00" data-emoji=""  data-font="Lato" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
       </div>
 
-      <div class="custom-offering">
-        <label for="customAmount">Or choose your own amount</label>
-        <div class="custom-offering-row">
-          <span class="custom-amount-field">
-            <span class="currency" aria-hidden="true">$</span>
-            <input type="number" id="customAmount" min="1" step="0.01" inputmode="decimal" placeholder="Any amount, USD">
-          </span>
-          <button type="button" class="btn btn-gold" id="customOfferingBtn">Send via Buy Me a Coffee</button>
-        </div>
-        <p class="custom-offering-hint" id="customOfferingHint" role="status" aria-live="polite"></p>
-      </div>
-
-      <p class="offering-note">Offerings go directly via Buy Me a Coffee — opens in a new tab, no account or sign-up needed on your end.</p>
+      <p class="offering-note">Clicking the button opens Buy Me a Coffee in a new tab, where you can enter any amount you like — no account or sign-up needed on your end.</p>
     </div>
   </section>
   </div>
@@ -3727,51 +3609,19 @@
     wishComplete.classList.remove('visible');
   });
 
-  /* ---------------- Custom offering amount ---------------- */
-  var BMC_URL = 'https://www.buymeacoffee.com/fortunelantern';
-  var customAmount = document.getElementById('customAmount');
-  var customOfferingBtn = document.getElementById('customOfferingBtn');
-  var customOfferingHint = document.getElementById('customOfferingHint');
-
-  // Every click through to Buy Me a Coffee is invisible to GA4 by default --
-  // it's an outbound link, the browser just navigates. Firing this first is
-  // the only way to know whether the offering tab converts to a click at
-  // all, as opposed to whether the payment itself completes afterward.
-  function trackOffering(amount) {
-    if (typeof gtag === 'function') {
-      gtag('event', 'select_offering_amount', { amount: amount, currency: 'USD' });
-    }
-  }
-
-  document.querySelectorAll('.tier[data-offering-amount]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      trackOffering(parseFloat(a.dataset.offeringAmount));
+  /* ---------------- Offering button click tracking ---------------- */
+  // A click through to Buy Me a Coffee is invisible to GA4 by default --
+  // it's an outbound link, the browser just navigates. Firing this on the
+  // container (rather than the BMC-injected button itself) is what lets the
+  // event fire regardless of how BMC renders its widget internally.
+  var offeringBmcCta = document.getElementById('offeringBmcCta');
+  if (offeringBmcCta) {
+    offeringBmcCta.addEventListener('click', function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_offering_button');
+      }
     });
-  });
-
-  function sendCustomOffering() {
-    var val = parseFloat(customAmount.value);
-    if (!val || val <= 0) {
-      customOfferingHint.textContent = 'Enter an amount greater than $0 first.';
-      customAmount.focus();
-      return;
-    }
-    customOfferingHint.textContent = '';
-    var amountStr = Math.round(val * 100) / 100;
-    trackOffering(amountStr);
-    window.open(BMC_URL, '_blank', 'noopener');
   }
-
-  customOfferingBtn.addEventListener('click', sendCustomOffering);
-  customAmount.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      sendCustomOffering();
-    }
-  });
-  customAmount.addEventListener('input', function () {
-    customOfferingHint.textContent = '';
-  });
 
   /* ---------------- View switching (tab-style navigation) ----------------
      The page used to be one long scroll; nav links jumped to an anchor
