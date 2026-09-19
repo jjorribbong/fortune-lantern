@@ -1335,6 +1335,15 @@
     color: var(--paper-500);
   }
 
+  /* ---------- intro (visible-by-default homepage explainer) ---------- */
+
+  .intro { border-top: 1px solid var(--line); }
+
+  .intro-copy { display: flex; flex-direction: column; gap: 1.1rem; max-width: 62ch; margin-bottom: 2rem; color: var(--paper-300); }
+  .intro-copy strong { color: var(--paper-100); font-weight: 600; }
+
+  .intro-links { justify-content: flex-start; }
+
   /* ---------- offering ---------- */
 
   .offering-copy { display: flex; flex-direction: column; gap: 1.1rem; max-width: 56ch; margin-bottom: 2.5rem; color: var(--paper-300); }
@@ -1459,6 +1468,25 @@
         </div>
         <div class="wish-chips" id="wishWall"></div>
         <p class="examples-caption" id="wallCaption">Regenerated locally from a set of common hopes — nothing here is stored, shared, or seen by anyone else. Your own wish stays yours.</p>
+      </div>
+    </section>
+
+    <section class="section intro">
+      <div class="container-wide">
+        <div class="section-head">
+          <p class="eyebrow">사주 · 해몽</p>
+          <h2>Two old traditions, explained simply</h2>
+        </div>
+        <div class="intro-copy">
+          <p><strong>Saju</strong> (사주, "four pillars") is a centuries-old East Asian practice that reads your fate from four coordinates: the year, month, day, and hour of your birth. Each pillar carries two Chinese characters — a heavenly stem and an earthly branch — and together the eight characters map onto the Five Elements (wood, fire, earth, metal, water) to describe your temperament, your relationships, and the shape of your fortune.</p>
+          <p><strong>해몽</strong> (dream interpretation) is Korea's parallel tradition for reading meaning out of sleep — a pig, a tooth falling out, being chased, a house catching fire. Some symbols are read as omens of wealth, others as warnings, and nearly all of them carry both a folk reading passed down for generations and a more modern psychological one.</p>
+          <p>This site puts both traditions in one place, in English, for free: a real Saju reading calculated from your exact birth details, a compatibility checker, and a library of nearly 80 Korean dream symbols with real situational detail. No account, no paywall — if a reading resonates, an entirely optional offering is available afterward.</p>
+        </div>
+        <div class="cta-row intro-links">
+          <a class="btn btn-gold" href="#reading" data-view="reading">Begin My Reading</a>
+          <a class="btn btn-ghost" href="/dreams/index.html">Browse the Dream Library</a>
+          <a class="btn btn-ghost" href="#articles" data-view="articles">Read the Articles</a>
+        </div>
       </div>
     </section>
   </div>
