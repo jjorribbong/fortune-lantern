@@ -1,0 +1,176 @@
+<title>Pinterest Pins — Download</title>
+<style>
+  :root {
+    --bg: #f2f0ea;
+    --surface: #ffffff;
+    --ink: #1c1a16;
+    --ink-dim: #6b6558;
+    --line: #e3ded2;
+    --accent: #a8763a;
+    --accent-soft: #f4e9d8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16140f;
+      --surface: #201d17;
+      --ink: #f0ece2;
+      --ink-dim: #a89e8a;
+      --line: #322d23;
+      --accent: #d8a652;
+      --accent-soft: #332a18;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16140f;
+    --surface: #201d17;
+    --ink: #f0ece2;
+    --ink-dim: #a89e8a;
+    --line: #322d23;
+    --accent: #d8a652;
+    --accent-soft: #332a18;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding-inline: 16px;
+    padding-block: 20px 48px;
+  }
+
+  .wrap { max-width: 640px; margin: 0 auto; }
+
+  .banner {
+    background: var(--accent-soft);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .banner .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 6px;
+  }
+  .banner p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .banner strong { color: var(--accent); }
+
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+    text-wrap: balance;
+  }
+  .sub {
+    color: var(--ink-dim);
+    font-size: 0.92rem;
+    margin: 0 0 24px;
+  }
+
+  .item { margin-bottom: 36px; }
+  .item-head {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .item-num {
+    font-variant-numeric: tabular-nums;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 999px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .item-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .frame {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 10px;
+  }
+  .frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .meta {
+    margin-top: 10px;
+    font-size: 0.82rem;
+    color: var(--ink-dim);
+    line-height: 1.6;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .meta b { color: var(--ink); }
+
+  footer {
+    margin-top: 8px;
+    font-size: 0.82rem;
+    color: var(--ink-dim);
+    text-align: center;
+  }
+</style>
+
+<div class="wrap">
+  <div class="banner">
+    <p class="eyebrow">How to save</p>
+    <p>이미지를 <strong>길게 눌러서</strong> "이미지 다운로드" 또는 "사진에 저장"을 선택해줘. 그래도 안 되면 화면을 캡처해서 잘라써도 돼.</p>
+  </div>
+
+  <h1>Fortune Lantern — New Pinterest Pins</h1>
+  <p class="sub">무료사주 / 궁합 / 온라인 부적 / 풍등 날리기 핀 4장</p>
+
+  <div class="item">
+    <div class="item-head"><span class="item-num">1</span><span class="item-name">무료 사주</span></div>
+    <div class="frame"><img src="https://raw.githubusercontent.com/jjorribbong/fortune-lantern/main/tmp-assets/pins2/01-saju.png" alt="Free Saju reading pin"></div>
+    <div class="meta"><b>Link:</b> https://fortunelantern.com/#reading</div>
+  </div>
+
+  <div class="item">
+    <div class="item-head"><span class="item-num">2</span><span class="item-name">궁합</span></div>
+    <div class="frame"><img src="https://raw.githubusercontent.com/jjorribbong/fortune-lantern/main/tmp-assets/pins2/02-compat.png" alt="Saju compatibility pin"></div>
+    <div class="meta"><b>Link:</b> https://fortunelantern.com/#compatibility</div>
+  </div>
+
+  <div class="item">
+    <div class="item-head"><span class="item-num">3</span><span class="item-name">온라인 부적</span></div>
+    <div class="frame"><img src="https://raw.githubusercontent.com/jjorribbong/fortune-lantern/main/tmp-assets/pins2/03-talisman.png" alt="Online talisman pin"></div>
+    <div class="meta"><b>Link:</b> https://fortunelantern.com/#reading</div>
+  </div>
+
+  <div class="item">
+    <div class="item-head"><span class="item-num">4</span><span class="item-name">풍등 날리기</span></div>
+    <div class="frame"><img src="https://raw.githubusercontent.com/jjorribbong/fortune-lantern/main/tmp-assets/pins2/04-lantern.png" alt="Wish lantern pin"></div>
+    <div class="meta"><b>Link:</b> https://fortunelantern.com/#wish</div>
+  </div>
+
+  <footer>다 저장했으면 이 페이지는 닫아도 돼.</footer>
+</div>
